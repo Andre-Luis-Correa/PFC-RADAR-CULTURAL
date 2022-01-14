@@ -30,6 +30,19 @@ function executeQuery($sql, $data)
 	$types = str_repeat('s', count($values));
 
 	// ... operador SPLAT: extrai o array em N variáveis.
+	/*
+	function concatenate($transform, ...$strings) {
+		$string = '';
+		foreach($strings as $piece) {
+			$string .= $piece;
+		}
+		return($transform($string));
+	}
+
+	echo concatenate("strtoupper", "I'd ", "like ", 4 + 2, " apples");
+	// This would print:
+	// I'D LIKE 6 APPLES
+	*/
 	$stmt->bind_param($types, ...$values);
 	$stmt->execute();
 
