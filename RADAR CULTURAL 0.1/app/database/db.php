@@ -1,5 +1,13 @@
 <?php
 
+
+/*
+//Exibir todos os erros quando ocorrerem
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+*/
+
 require('connect.php');
 
 
@@ -14,13 +22,32 @@ function executeQuery($sql, $data)
 {
 	global $conn;
 	$stmt = $conn->prepare($sql);
+	
+	//obtem um array indexado a partir de um array associativo
 	$values = array_values($data);
+	
+	//define todos os N campos como string
 	$types = str_repeat('s', count($values));
+
+	// ... operador SPLAT: extrai o array em N variáveis.
+	/*
+	function concatenate($transform, ...$strings) {
+		$string = '';
+		foreach($strings as $piece) {
+			$string .= $piece;
+		}
+		return($transform($string));
+	}
+
+	echo concatenate("strtoupper", "I'd ", "like ", 4 + 2, " apples");
+	// This would print:
+	// I'D LIKE 6 APPLES
+	*/
 	$stmt->bind_param($types, ...$values);
 	$stmt->execute();
+
 	return $stmt;
 }
-
 
 function selectAll($table, $conditions = [])
 {
@@ -80,6 +107,7 @@ function selectOne($table, $conditions)
 function create($table, $data)
 {
 	global $conn;
+	
 	$sql = "INSERT INTO $table SET ";
 
 	$i = 0;
