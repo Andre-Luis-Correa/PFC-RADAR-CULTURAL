@@ -8,12 +8,11 @@ if(isset($_POST['register-btn'])){
 
    $_POST['senha'] = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-   //$user_id = create('tb_usuario', $_POST);
-   //$user = selectOne('tb_usuario', ['id_usuario' => $user_id]);
+   $user_id = create('tb_usuario', $_POST);
+   $user = selectOne('tb_usuario', ['id_usuario' => $user_id]);
    
-   dd($_POST);
+   dd($user);
 
-   //dd($_POST);
 }
 
 
