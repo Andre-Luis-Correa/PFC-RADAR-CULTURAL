@@ -54,6 +54,7 @@ if (isset($_GET['delete_id']) && $_SESSION['tipo_usuario'] == 0) {
 
 if (isset($_POST['add-comment'])) {
 	usersOnly();
+
 	$errors = validateComment($_POST);
 
 	if (count($errors) === 0) {
@@ -71,4 +72,6 @@ if (isset($_POST['add-comment'])) {
 	}
 
 }
+
+//update comment
 
