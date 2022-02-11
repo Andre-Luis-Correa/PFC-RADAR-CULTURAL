@@ -1,8 +1,10 @@
 <?php include("path.php"); ?>
+<?php include(ROOT_PATH . '/app/controllers/comments.php'); ?>
 <?php include(ROOT_PATH . '/app/controllers/posts.php'); 
 
 if (isset($_GET['id_publicacao'])) {
   $post = selectOne('tb_publicacao', ['id_publicacao' => $_GET['id_publicacao']]);
+  $comments = getCommentsByPost($_GET['id_publicacao']);
 } 
 
 $topics = selectAll('tb_categoria');
@@ -41,6 +43,7 @@ $posts = selectAll('tb_publicacao', ['publicado' => 1]);
   </script>
 
   <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+  <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
 
   <!-- Page Wrapper -->
   <div class="page-wrapper">
@@ -57,8 +60,81 @@ $posts = selectAll('tb_publicacao', ['publicado' => 1]);
              <?php echo html_entity_decode($post['conteudo']); ?>
           </div>
 
+          <!-- Comments -->
+
+          <br>
+          <br>
+
+          <details>
+            <summary>Comentários:</summary>
+
+            <div class="content">
+
+                <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+
+                <form action="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>" method="post">
+                    <div>
+                        <label>Adicionar comentário:</label>
+                        <br>
+                        <br>
+                        <textarea type="text" name="conteudo" value="<?php echo $conteudo_comment ?>" class="text-input"> </textarea> 
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <button type="submit" name="add-comment" class="btn btn-big">Add Comment</button>
+                    </div>
+                </form>
+
+                <br>
+                <br>
+
+                <div>
+                  Comentários aqui
+
+                    <table>
+                        <tbody>
+                            <?php foreach ($comments as $key => $comment): ?>
+                                <tr>
+
+                                    <?php foreach ($users as $key => $user): ?>
+
+                                    <?php if ($user['id_usuario'] == $comment['fk_id_usuario']): ?>
+                                        <td>
+                                            <?= $user['nome_usuario']; ?>
+                                        </td>
+
+                                    <?php endif; ?>
+                                        
+                                    <?php endforeach; ?>
+
+                                    <td><?php echo $comment['conteudo'] ?></td>
+
+
+                                    <?php if ($comment['fk_id_usuario'] == isset($_SESSION['id_usuario'])): ?>
+
+                                      <td><a href="edit.php?id_categoria=<?php echo $topic['id_categoria']; ?>" class="edit">edit</a></td>
+
+                                      <td><a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>" class="delete">delete</a></td>
+
+                                    <?php endif; ?>
+                                    
+                                </tr>
+                            <?php endforeach; ?>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+          </details>
+
+          <!-- END Comments -->
+
         </div>
       </div>
+
       <!-- // Main Content -->
 
       <!-- Sidebar -->

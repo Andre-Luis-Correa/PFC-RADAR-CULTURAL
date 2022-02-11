@@ -1,8 +1,8 @@
 <?php
 
-include(ROOT_PATH . "/app/database/db.php");
-include(ROOT_PATH . "/app/helpers/middleware.php");
-include(ROOT_PATH . "/app/helpers/validatePost.php");
+include_once(ROOT_PATH . "/app/database/db.php");
+include_once(ROOT_PATH . "/app/helpers/middleware.php");
+include_once(ROOT_PATH . "/app/helpers/validatePost.php");
 
 $table = 'tb_publicacao';
 

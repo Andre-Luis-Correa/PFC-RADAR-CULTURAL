@@ -9,9 +9,11 @@ $postsTitle = 'Recente Posts';
 if (isset($_GET['t_id'])) {
   $postsTitle = "Você pesquisou por posts na categoria '" . $_GET['nome'] . "'";
   $posts = getPostsByTopic($_GET['t_id']);
+
 } elseif (isset($_POST['search-term'])) {
   $postsTitle = "Você pesquisou por '" . $_POST['search-term'] . "'";
   $posts = searchPosts($_POST['search-term']);
+  
 } else {
   $posts = getPublishedPosts();
 }

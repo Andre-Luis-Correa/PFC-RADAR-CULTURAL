@@ -1,6 +1,6 @@
 <?php
 
-function validatePost($comment)
+function validateComment($comment)
 {
 
    $errors = array();

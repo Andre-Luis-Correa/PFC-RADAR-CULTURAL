@@ -266,6 +266,24 @@ function getPostsByTopic($topic_id)
 	return $records;
 }
 
+
+
+function getCommentsByPost($post_id)
+{
+	global $conn;
+
+	$sql = "SELECT c.* FROM tb_comentario AS c JOIN tb_publicacao AS p where c.fk_id_publicacao = p.id_publicacao AND fk_id_publicacao=?";
+
+	$stmt = executeQuery($sql, ['id_publicacao' => $post_id]);
+	$records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+	return $records;
+}
+
+//$comments = getCommentsByPost(44);
+//dd($comments);
+
+
+
 function searchPosts($term)
 {
 	$match = '%' . $term . '%';
