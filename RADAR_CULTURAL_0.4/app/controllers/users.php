@@ -220,7 +220,7 @@ if (isset($_POST['update-user-profile'])) {
 
 		   	$_SESSION['type'] = "success";
 
-		   	header('location: ' . BASE_URL . '/user/index.php');
+		   	header('location: ' . BASE_URL . '/user/profile/index.php');
 		   	exit();
 
 	   } else {
