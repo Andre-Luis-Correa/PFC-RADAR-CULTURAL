@@ -98,6 +98,7 @@
 
                       <table>
                           <tbody>
+
                               <?php foreach ($comments as $key => $comment): ?>
                                   <tr>
 
@@ -116,9 +117,13 @@
                                         <td><?php echo $comment['conteudo'] ?></td>
 
 
-                                      <?php if ($comment['fk_id_usuario'] == $_SESSION['id_usuario']): ?>
+                                      <?php if (isset($_SESSION['id_usuario'])): ?>
 
-                                        <td><a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>" class="delete">delete</a></td>
+                                        <?php if ($comment['fk_id_usuario'] == $_SESSION['id_usuario']): ?>
+
+                                          <td><a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>" class="delete">delete</a></td>
+
+                                        <?php endif; ?>
 
                                       <?php endif; ?>
                                       
