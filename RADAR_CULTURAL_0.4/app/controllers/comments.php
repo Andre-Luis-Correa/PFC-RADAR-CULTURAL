@@ -72,6 +72,3 @@ if (isset($_POST['add-comment'])) {
 	}
 
 }
-
-//update comment
-

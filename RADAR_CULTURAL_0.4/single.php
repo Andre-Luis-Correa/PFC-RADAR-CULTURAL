@@ -1,16 +1,17 @@
 <?php include("path.php"); ?>
 <?php include(ROOT_PATH . '/app/controllers/comments.php'); ?>
 
-<?php //include_once(ROOT_PATH . '/app/controllers/posts.php'); 
+<?php
 
-if (isset($_GET['id_publicacao'])) {
-  $post = selectOne('tb_publicacao', ['id_publicacao' => $_GET['id_publicacao']]);
-  $comments = getCommentsByPost($_GET['id_publicacao']);
-} 
+    if (isset($_GET['id_publicacao'])) 
+    {
+      $post = selectOne('tb_publicacao', ['id_publicacao' => $_GET['id_publicacao']]);
+      $comments = getCommentsByPost($_GET['id_publicacao']);
+    } 
 
-$topics = selectAll('tb_categoria');
+    $topics = selectAll('tb_categoria');
 
-$posts = selectAll('tb_publicacao', ['publicado' => 1]);
+    $posts = selectAll('tb_publicacao', ['publicado' => 1]);
 
 ?>
 
@@ -34,6 +35,7 @@ $posts = selectAll('tb_publicacao', ['publicado' => 1]);
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title><?php echo $post['titulo']; ?> | RADAR CULTURAL</title>
+
 </head>
 
 <body>
@@ -66,9 +68,12 @@ $posts = selectAll('tb_publicacao', ['publicado' => 1]);
 
               <div class="content">
 
+
                   <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
+
                   <form action="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>" method="post" enctype="multipart/form-data">
+
                       <div>
                           <label>Adicionar comentário:</label>
                           <br>
@@ -81,13 +86,15 @@ $posts = selectAll('tb_publicacao', ['publicado' => 1]);
                       <div>
                           <button type="submit" name="add-comment" class="btn btn-big">Add Comment</button>
                       </div>
+
                   </form>
 
                   <br>
                   <br>
 
                   <div>
-                    Comentários aqui:
+
+                    Comentários:
 
                       <table>
                           <tbody>
@@ -105,12 +112,11 @@ $posts = selectAll('tb_publicacao', ['publicado' => 1]);
                                           
                                       <?php endforeach; ?>
 
-                                      <td><?php echo $comment['conteudo'] ?></td>
+
+                                        <td><?php echo $comment['conteudo'] ?></td>
 
 
-                                      <?php if ($comment['fk_id_usuario'] == isset($_SESSION['id_usuario'])): ?>
-
-                                        <td><a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&edit_id=<?php echo $comment['id_comentario']; ?>" class="edit">edit</a></td>
+                                      <?php if ($comment['fk_id_usuario'] == $_SESSION['id_usuario']): ?>
 
                                         <td><a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>" class="delete">delete</a></td>
 

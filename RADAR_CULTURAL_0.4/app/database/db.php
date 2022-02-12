@@ -204,6 +204,30 @@ function updatePost($table, $id, $data)
 
 }
 
+//comment
+function updateComment($table, $id, $data)
+{
+	global $conn;
+	$sql = "UPDATE $table SET ";
+
+	$i = 0;
+	foreach ($data as $key => $value) {
+
+		if ($i === 0) {
+			$sql = $sql . " $key=?";
+		} else {
+			$sql = $sql . ", $key=?";
+		}
+		$i++;
+	}
+
+	$sql = $sql . " WHERE id_comentario=?";
+	$data['id_comentario'] = $id;
+	$stmt = executeQuery($sql, $data);
+	return $stmt->affected_rows;
+
+}
+
 function deleteUser($table, $id)
 {
 	global $conn;
