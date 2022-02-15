@@ -1,7 +1,8 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/topics.php"); 
+<?php include(ROOT_PATH . "/app/controllers/pages.php");
 adminOnly();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +27,7 @@ adminOnly();
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../assets/css/admin.css">
 
-        <title>Admin Section - Manage Topics</title>
+        <title>Admin Section - Add Page</title>
         <link rel="shortcut icon" type="imagex/png" href="../../assets/images/logo.ico">
     </head>
 
@@ -43,34 +44,29 @@ adminOnly();
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Topic</a>
-                    <a href="index.php" class="btn btn-big">Manage Topics</a>
+                    <a href="create.php" class="btn btn-big">Add Page</a>
+                    <a href="index.php" class="btn btn-big">Manage Pages</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Manage Topics</h2>
+                    <h2 class="page-title">Add Page</h2>
+                    <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
-                    <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
-
-                    <table>
-                        <thead>
-                            <th>SN</th>
-                            <th>Name</th>
-                            <th colspan="2">Action</th>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($topics as $key => $topic): ?>
-                               <tr>
-                                    <td><?php echo $key + 1; ?></td>
-                                    <td><?php echo $topic['nome']; ?></td>
-                                    <td><a href="edit.php?id_categoria=<?php echo $topic['id_categoria']; ?>" class="edit">edit</a></td>
-                                    <td><a href="index.php?del_id=<?php echo $topic['id_categoria']; ?>" class="delete">delete</a></td>
-                                </tr> 
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                    <form action="create.php" method="post" enctype="multipart/form-data">
+                        <div>
+                            <label>Título</label>
+                            <input type="text" name="titulo" value="<?php echo $titulo ?>" class="text-input">
+                        </div>
+                        <div>
+                            <label>Conteúdo</label>
+                            <textarea name="conteudo" id="body"><?php echo $conteudo ?></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" name="add-page" class="btn btn-big">Add Page</button>
+                        </div>
+                    </form>
 
                 </div>
 

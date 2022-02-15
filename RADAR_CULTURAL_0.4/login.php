@@ -21,7 +21,8 @@ guestsOnly();
   <!-- Custom Styling -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <title>Login</title>
+  <title>Login | RADAR CULTURAL</title>
+  <link rel="shortcut icon" type="imagex/png" href="assets/images/logo.ico">
 </head>
 
 <body>

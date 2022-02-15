@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="../../assets/css/style.css">
 
         <title>User Section - Manage Profile</title>
+        <link rel="shortcut icon" type="imagex/png" href="../../assets/images/logo.ico">
     </head>
 
     <body>

@@ -38,7 +38,8 @@ if (isset($_GET['t_id'])) {
   <!-- Custom Styling -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <title>Blog</title>
+  <title>RADAR CULTURAL</title>
+  <link rel="shortcut icon" type="imagex/png" href="assets/images/logo.ico">
 </head>
 
 <body>

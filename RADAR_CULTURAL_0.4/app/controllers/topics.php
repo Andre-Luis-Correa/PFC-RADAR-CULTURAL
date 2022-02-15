@@ -47,6 +47,7 @@ if (isset($_GET['del_id'])) {
 	exit();
 }
 
+
 if (isset($_POST['update-topic'])) {
 	adminOnly();
 	$errors = validateTopic($_POST);

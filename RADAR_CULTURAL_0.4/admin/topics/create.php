@@ -28,6 +28,7 @@ adminOnly();
         <link rel="stylesheet" href="../../assets/css/admin.css">
 
         <title>Admin Section - Add Topic</title>
+        <link rel="shortcut icon" type="imagex/png" href="../../assets/images/logo.ico">
     </head>
 
     <body>

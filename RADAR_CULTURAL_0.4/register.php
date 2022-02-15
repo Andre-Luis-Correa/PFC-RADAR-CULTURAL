@@ -21,7 +21,8 @@ guestsOnly();
   <!-- Custom Styling -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <title>Registre-se</title>
+  <title>Registre-se | RADAR CULTURAL</title>
+  <link rel="shortcut icon" type="imagex/png" href="assets/images/logo.ico">
 </head>
 
 <body>
