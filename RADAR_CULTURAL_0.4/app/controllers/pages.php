@@ -43,6 +43,16 @@ if (isset($_GET['id_pagina'])) {
 }
 
 
+if (isset($_GET['del_id'])) {
+	adminOnly();
+	$id = $_GET['del_id'];
+	$count = deletePage($table, $id);
+	$_SESSION['message'] = 'Página deletada com sucesso';
+	$_SESSION['type'] = 'success';
+	header('location: ' . BASE_URL . '/admin/pages/index.php');
+	exit();
+}
+
 
 
 if (isset($_POST['update-page'])) {

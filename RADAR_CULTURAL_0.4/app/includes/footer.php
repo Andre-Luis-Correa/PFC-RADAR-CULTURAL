@@ -1,3 +1,9 @@
+<?php
+
+  $pages = selectAll('tb_pagina');
+
+?>
+
 <!-- footer -->
 <div class="footer">
   <div class="footer-content">
@@ -23,21 +29,12 @@
     <div class="footer-section links">
       <h2>Quick Links</h2>
       <br>
+
       <ul>
         <a href="#">
-          <li>Events</li>
-        </a>
-        <a href="#">
-          <li>Team</li>
-        </a>
-        <a href="#">
-          <li>Mentores</li>
-        </a>
-        <a href="#">
-          <li>Gallery</li>
-        </a>
-        <a href="#">
-          <li>Terms and Conditions</li>
+          <?php foreach ($pages as $key => $page): ?>
+             <li><a href="<?php echo BASE_URL . '/page.php?id_pagina=' . $page['id_pagina']; ?>"><?php echo $page['titulo']; ?></a></li>
+          <?php endforeach; ?>
         </a>
       </ul>
     </div>

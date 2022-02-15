@@ -293,6 +293,16 @@ function deleteComment($table, $id)
 
 }
 
+function deletePage($table, $id)
+{
+	global $conn;
+	$sql = "DELETE FROM $table WHERE id_pagina=? ";
+
+	$stmt = executeQuery($sql, ['id_pagina' => $id]);
+	return $stmt->affected_rows;
+
+}
+
 
 function getPublishedPosts()
 {

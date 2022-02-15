@@ -1,3 +1,9 @@
+<?php
+
+  $pages = selectAll('tb_pagina');
+
+?>
+
 <header>
   <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
     <h1 class="logo-text"><span>Radar</span>Cultural</h1>
@@ -5,8 +11,14 @@
   <i class="fa fa-bars menu-toggle"></i>
   <ul class="nav">
     <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
+
+    <!-- início: links das páginas criadas pelos colaboradores -->
+
+    <?php foreach ($pages as $key => $page): ?>
+       <li><a href="<?php echo BASE_URL . '/page.php?id_pagina=' . $page['id_pagina']; ?>"><?php echo $page['titulo']; ?></a></li>
+    <?php endforeach; ?>
+
+    <!-- fim: links das páginas criadas pelos colaboradores -->
 
     <?php if(isset($_SESSION['id_usuario'])): ?>
 
