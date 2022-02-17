@@ -59,6 +59,10 @@ adminOnly();
                             <label>Nome</label>
                             <input type="text" name="nome" value="<?php echo $nome ?>" class="text-input">
                         </div>
+                        <div>
+                            <label>Cor</label>
+                            <input type="color" name="cor" value="<?php echo $cor ?>" class="text-input">
+                        </div>
 
                         <div>
                             <button type="submit" name="add-topic" class="btn btn-big">Add Topic</button>

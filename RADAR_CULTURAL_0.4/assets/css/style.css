@@ -1,5 +1,11 @@
 * {
+
   box-sizing: border-box
+}
+
+@font-face{
+  font-family: "Raleway";
+  src: url('fonte/static/Raleway-Regular.ttf') format("truetype");
 }
 
 html,
@@ -8,7 +14,7 @@ body {
   padding: 0px;
   margin: 0px;
   background: #f6f6f6;
-  font-family: 'Lora', serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1,
@@ -17,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Candal', serif;
+  font-family: 'Raleway', sans-serif;
   color: #5c5b5b;
   margin: 5px;
 }

@@ -6,6 +6,7 @@
     if (isset($_GET['id_publicacao'])) 
     {
       $post = selectOne('tb_publicacao', ['id_publicacao' => $_GET['id_publicacao']]);
+      $topic_color = selectOne('tb_categoria', ['id_categoria' => $post['fk_id_categoria']]);
       $comments = getCommentsByPost($_GET['id_publicacao']);
     } 
 
@@ -37,6 +38,18 @@
     <title><?php echo $post['titulo']; ?> | RADAR CULTURAL</title>
 
 </head>
+
+<style type="text/css">
+  
+    html,
+    body {
+      height: 100%;
+      padding: 0px;
+      margin: 0px;
+      background: <?php echo $topic_color['cor']; ?>;
+      font-family: 'Lora', serif;
+    }
+</style>
 
 <body>
     <!-- Facebook Page Plugin SDK -->

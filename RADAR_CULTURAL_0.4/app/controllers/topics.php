@@ -8,6 +8,7 @@ $table = 'tb_categoria';
 $errors = array();
 $id = '';
 $nome = '';
+$cor = '';
 
 $topics = selectAll($table);
 
@@ -25,6 +26,7 @@ if (isset($_POST['add-topic'])) {
 		exit();
 	} else {
 		$nome = $_POST['nome'];
+		$cor = $_POST['cor'];
 	}
 
 }
@@ -34,6 +36,7 @@ if (isset($_GET['id_categoria'])) {
 	$topic = selectOne($table, ['id_categoria' => $id]);
 	$id = $topic['id_categoria'];
 	$nome = $topic['nome'];
+	$cor = $topic['cor'];
 
 }
 
@@ -64,5 +67,6 @@ if (isset($_POST['update-topic'])) {
 	} else {
 		$id = $_POST['id_categoria'];
 		$nome = $_POST['nome'];
+		$cor = $_POST['cor'];
 	}
 }
