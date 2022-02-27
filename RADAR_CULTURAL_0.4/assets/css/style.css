@@ -1,11 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 * {
 
-  box-sizing: border-box
-}
-
-@font-face{
-  font-family: "Raleway";
-  src: url('fonte/static/Raleway-Regular.ttf') format("truetype");
+  box-sizing: border-box;
+   font-family: 'Ubuntu', sans-serif
 }
 
 html,
@@ -14,7 +11,7 @@ body {
   padding: 0px;
   margin: 0px;
   background: #f6f6f6;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 h1,
@@ -23,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   color: #5c5b5b;
   margin: 5px;
 }
@@ -115,7 +112,7 @@ header .logo-text {
 }
 
 header .logo-text span {
-  color: #05f7ff;
+  color: #ffffff;
 }
 
 header ul {
@@ -169,7 +166,8 @@ header ul li a {
 }
 
 header ul li a:hover {
-  background: #006669;
+  background: #d5d6d6;
+  color: black;
   transition: 0.5s;
 }
 
@@ -184,6 +182,7 @@ header .menu-toggle {
 .page-wrapper a:hover {
   color: #006669;
 }
+
 
 /* POST SLIDER */
 
@@ -201,7 +200,7 @@ header .menu-toggle {
   top: 50%;
   right: 30px;
   font-size: 2em;
-  color: #006669;
+  color: #000000;
   cursor: pointer;
 }
 
@@ -210,17 +209,19 @@ header .menu-toggle {
   top: 50%;
   left: 30px;
   font-size: 2em;
-  color: #006669;
+  color: #000000;
   cursor: pointer;
 }
 
 .post-slider .post-wrapper h4 {
-  height: 60px;
+  padding-top: 10px;
+  height: 90px;
+  font-size: 20px;
 }
 
 .post-slider .post-wrapper {
   width: 84%;
-  height: 350px;
+  height: 400px;
   margin: 0px auto;
   overflow: hidden;
   padding: 10px 0px 10px 0px;
@@ -228,24 +229,27 @@ header .menu-toggle {
 
 .post-slider .post-wrapper .post {
   width: 300px;
-  height: 330px;
+  height: 350px;
   margin: 0px 10px;
   display: inline-block;
   background: white;
-  border-radius: 5px;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
 }
 
 .post-slider .post-wrapper .post .post-info {
-  height: 130px;
+  height: 200px;
   padding: 0px 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .post-slider .post-wrapper .post .slider-image {
   width: 100%;
   height: 200px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  filter: brightness(80%);
 }
 
 /* CONTENT */
@@ -264,7 +268,8 @@ header .menu-toggle {
   background: white;
   padding: 20px 50px;
   font-size: 1.1em;
-  border-radius: 5px;
+  border-radius: 20px;
+  margin-top: 20px;
 }
 
 .content .main-content.single .post-title {
@@ -276,7 +281,7 @@ header .menu-toggle {
   width: 95%;
   height: 270px;
   margin: 20px auto;
-  border-radius: 5px;
+  border-radius: 20px;
   background: white;
   position: relative;
 }
@@ -288,10 +293,12 @@ header .menu-toggle {
 }
 
 .content .popular .post img {
-  height: 60px;
+  height: 50px;
   width: 75px;
   float: left;
   margin-right: 10px;
+  max-width: 100% !important;
+  border-radius: 10px;
 }
 
 .content .main-content .post .post-preview i {
@@ -308,15 +315,15 @@ header .menu-toggle {
 .content .main-content .post .read-more {
   position: absolute;
   bottom: 10px;
-  right: 10px;
-  border: 1px solid #006669;
+  left: 43%;
+  border: 1px solid #000000;
   background: transparent;
-  border-radius: 0px;
-  color: #006669 !important;
+  border-radius: 10px;
+  color: #000000 !important;
 }
 
 .content .main-content .post .read-more:hover {
-  background: #006669;
+  background: #000000;
   color: white !important;
   transition: .25s;
 }
@@ -325,14 +332,19 @@ header .menu-toggle {
   width: 40%;
   height: 100%;
   float: left;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .content .main-content .post .post-preview {
   width: 60%;
   padding: 10px;
+  padding-left: 3%;
   float: right;
+}
+
+.content .main-content .post .post-preview .preview-text{
+  padding-top: 10px;
 }
 
 .content .main-content .recent-post-title {
@@ -351,8 +363,9 @@ header .menu-toggle {
 .content .sidebar .section {
   background: white;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .content .sidebar .section .section-title {
@@ -361,6 +374,11 @@ header .menu-toggle {
 
 .content .sidebar .section.search {
   margin-top: 80px;
+  border-radius: 20px;
+}
+
+.content .sidebar .section.topics {
+  border-radius: 20px;
 }
 
 .content .sidebar .section.topics ul {
@@ -411,7 +429,7 @@ header .menu-toggle {
 /* FOOTER */
 
 .footer {
-  background: #303036;
+  background: #000000;
   color: #d3d3d3;
   height: 400px;
   position: relative;
@@ -433,7 +451,7 @@ header .menu-toggle {
 }
 
 .footer .footer-content .about h1 span {
-  color: #05f7ff;
+  color: #ffffff;
 }
 
 .footer .footer-content .about .contact span {
@@ -552,7 +570,7 @@ header .menu-toggle {
   }
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 1200px) {
   header {
     position: relative;
   }
@@ -568,7 +586,7 @@ header .menu-toggle {
 
   header ul {
     width: 100%;
-    background: #0E94A0;
+    background: #1c1c1c;
     max-height: 0px;
     overflow: hidden;
   }
@@ -589,13 +607,13 @@ header .menu-toggle {
 
   header ul li ul li a {
     padding: 10px;
-    background: #0E94A0;
+    background: #000000;
     color: white;
     padding-left: 50px;
   }
 
   header ul li ul li a:hover {
-    background: #006669;
+    background: #d5d6d6;
   }
 
   header ul li ul li a.logout {
@@ -657,6 +675,44 @@ header .menu-toggle {
     max-width: 100% !important;
     height: auto;
 }
+
+.content .text-input{
+  width: 100%;
+  resize: none;
+}
+
+
+.content .comment {
+  background: #f6f6f6;
+  padding: 20px 50px;
+  font-size: 1.1em;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+
+.content .comment-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  float: left;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.content .comment-preview {
+  padding-left: 16%;
+  color: #757575;
+  font-size: .8em;
+}
+
+.content .preview-text-comment {
+  line-height: 1.5em;
+  font-size: 1.03em;
+  color: #444;
+}
+
+
 
 
 

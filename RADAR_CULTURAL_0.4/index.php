@@ -94,7 +94,7 @@ if (isset($_GET['t_id'])) {
             &nbsp;
             <i class="far fa-calendar"> <?php echo date('d-m-Y', strtotime($post['data_hora'])); ?></i>
             <p class="preview-text">
-              <?php echo html_entity_decode(substr($post['resumo'], 0, 150) . '...'); ?>
+              <?php echo html_entity_decode(substr($post['resumo'], 0, 140) . '...'); ?>
             </p>
             <a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>" class="btn read-more">Read More</a>
           </div>

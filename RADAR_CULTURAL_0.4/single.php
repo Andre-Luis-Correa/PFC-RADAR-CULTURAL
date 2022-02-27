@@ -39,18 +39,6 @@
 
 </head>
 
-<style type="text/css">
-  
-    html,
-    body {
-      height: 100%;
-      padding: 0px;
-      margin: 0px;
-      background: <?php echo $topic_color['cor']; ?>;
-      font-family: 'Lora', serif;
-    }
-</style>
-
 <body>
     <!-- Facebook Page Plugin SDK -->
     <div id="fb-root"></div>
@@ -107,44 +95,46 @@
 
                   <div>
 
-                    Comentários:
+                      <?php foreach ($comments as $key => $comment): ?>
 
-                      <table>
-                          <tbody>
+                      <div class="comment clearfix">
 
-                              <?php foreach ($comments as $key => $comment): ?>
-                                  <tr>
+                        <?php foreach ($users as $key => $user): ?>
 
-                                      <?php foreach ($users as $key => $user): ?>
+                          <?php if ($user['id_usuario'] == $comment['fk_id_usuario']): ?>
+                              <img src="<?php echo BASE_URL . '/assets/images/' . $user['foto_perfil']; ?>" alt="" class="comment-image">
 
-                                        <?php if ($user['id_usuario'] == $comment['fk_id_usuario']): ?>
-                                            <td>
-                                                <?= $user['nome_usuario']; ?>
-                                            </td>
+                              <div class="comment-preview">
+                                <h2><?php echo $user['nome_usuario']; ?></a></h2>
 
-                                        <?php endif; ?>
-                                          
-                                      <?php endforeach; ?>
+                                <br>
 
+                                <i class="far fa-calendar"> <?php echo date('d-m-Y', strtotime($comment['data_hora'])); ?></i>
 
-                                        <td><?php echo $comment['conteudo'] ?></td>
+                                <p class="preview-text-comment">
+                                  <?php echo $comment['conteudo']; ?>
+                                </p>
 
+                                <?php if (isset($_SESSION['id_usuario'])): ?>
 
-                                      <?php if (isset($_SESSION['id_usuario'])): ?>
+                                  <?php if ($comment['fk_id_usuario'] == $_SESSION['id_usuario']): ?>
 
-                                        <?php if ($comment['fk_id_usuario'] == $_SESSION['id_usuario']): ?>
+                                    <a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>" class="comment-delete">Delete</a>
 
-                                          <td><a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>" class="delete">delete</a></td>
+                                  <?php endif; ?>
 
-                                        <?php endif; ?>
+                                <?php endif; ?>
 
-                                      <?php endif; ?>
-                                      
-                                  </tr>
-                              <?php endforeach; ?>
+                              </div>
 
-                          </tbody>
-                      </table>
+                          <?php endif; ?>
+                            
+                        <?php endforeach; ?>
+
+                      </div>
+
+                      <?php endforeach; ?>
+
                   </div>
 
               </div>

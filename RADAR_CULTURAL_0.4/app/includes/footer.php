@@ -11,12 +11,11 @@
     <div class="footer-section about">
       <h1 class="logo-text"><span>Radar</span>Cultural</h1>
       <p>
-        AwaInspires is a fictional blog conceived for the purpose of a tutorial on YouTube.
-        However, Awa has a blog called pieceofadvice.org where he writes truly inspiring stuff.
+        Radar Cultural
       </p>
       <div class="contact">
         <span><i class="fas fa-phone"></i> &nbsp; 123-456-789</span>
-        <span><i class="fas fa-envelope"></i> &nbsp; info@awainspires.com</span>
+        <span><i class="fas fa-envelope"></i> &nbsp; radar@cultural.com</span>
       </div>
       <div class="socials">
         <a href="#"><i class="fab fa-facebook"></i></a>
