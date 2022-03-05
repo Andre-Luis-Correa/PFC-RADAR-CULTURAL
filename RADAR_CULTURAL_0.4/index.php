@@ -42,6 +42,53 @@ if (isset($_GET['t_id'])) {
   <link rel="shortcut icon" type="imagex/png" href="assets/images/logo.ico">
 </head>
 
+<style type="text/css">
+
+.post .post-topic {
+  position: static;
+  display: block;
+  width: 25%;
+  height: 25px;
+  color: white;
+  font-size: bold;
+  border-radius: 8px;
+  margin-left: 15px;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 1px;
+}
+
+.post .post-topic .btn-topic {
+  font-size: bold;
+  color: white;
+}
+
+.post .post-topic .btn-topic h5 {
+  color: white;
+}
+
+.post .post-topic .btn-topic:hover {
+  color: white;
+}
+
+.content .main-content .post .post-topic {
+  position: static;
+  display: block;
+  width: 25%;
+  height: 25px;
+  color: white;
+  font-size: bold;
+  border-radius: 8px;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding-top: 1px;
+}
+
+
+</style>
+
 <body>
   
   <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
@@ -62,6 +109,19 @@ if (isset($_GET['t_id'])) {
 
           <div class="post">
             <img src="<?php echo BASE_URL . '/assets/images/' . $post['imagem_capa']; ?>" alt="" class="slider-image">
+
+            <?php foreach ($topics as $key => $topic): ?>
+
+              <?php if ($post['fk_id_categoria'] == $topic['id_categoria']): ?>
+
+                <div style="background-color: <?php echo $topic['cor'] ?>" class="post-topic">
+                  <a href="<?php echo BASE_URL . '/index.php?t_id=' . $post['fk_id_categoria'] . '&nome=' . $topic['nome']; ?>" class="btn-topic"><h5><?php echo $topic['nome']; ?></h5></a>
+                </div>
+
+              <?php endif; ?>
+
+            <?php endforeach; ?>
+
             <div class="post-info">
               <h4><a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>"><?php echo $post['titulo']; ?></a></h4>
               <i class="far fa-user"> <?php echo $post['nome_usuario']; ?></i>
@@ -89,6 +149,17 @@ if (isset($_GET['t_id'])) {
         <div class="post clearfix">
           <img src="<?php echo BASE_URL . '/assets/images/' . $post['imagem_capa']; ?>" alt="" class="post-image">
           <div class="post-preview">
+            <?php foreach ($topics as $key => $topic): ?>
+
+              <?php if ($post['fk_id_categoria'] == $topic['id_categoria']): ?>
+
+                <div style="background-color: <?php echo $topic['cor'] ?>" class="post-topic">
+                  <a href="<?php echo BASE_URL . '/index.php?t_id=' . $post['fk_id_categoria'] . '&nome=' . $topic['nome']; ?>" class="btn-topic"><h5><?php echo $topic['nome']; ?></h5></a>
+                </div>
+
+              <?php endif; ?>
+
+            <?php endforeach; ?>
             <h2><a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>"><?php echo $post['titulo']; ?></a></h2>
             <i class="far fa-user"> <?php echo $post['nome_usuario']; ?></i>
             &nbsp;

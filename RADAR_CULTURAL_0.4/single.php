@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title><?php echo $post['titulo']; ?> | RADAR CULTURAL</title>
+    <link rel="shortcut icon" type="imagex/png" href="assets/images/logo.ico">
 
 </head>
 
