@@ -219,6 +219,8 @@ if (isset($_POST['update-user-profile'])) {
 
 		   	$_SESSION['nome_usuario'] = $_POST['nome_usuario'];
 
+		   	$_SESSION['nome_completo'] = $_POST['nome_completo'];
+
 		   	$_SESSION['message'] = "Usuário editado com sucesso";
 
 		   	$_SESSION['type'] = "success";

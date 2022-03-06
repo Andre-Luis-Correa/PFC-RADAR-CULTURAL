@@ -1,7 +1,9 @@
 <?php include("../../path.php"); ?>
 <?php 
-    include(ROOT_PATH . "/app/controllers/comments.php"); 
+    include(ROOT_PATH . "/app/controllers/users.php"); 
+    $posts = selectAll('tb_publicacao');
     usersOnly();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
