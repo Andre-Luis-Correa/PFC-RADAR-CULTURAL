@@ -1,6 +1,6 @@
 <?php include("../../path.php"); ?>
 <?php 
-    include(ROOT_PATH . "/app/controllers/users.php"); 
+    include(ROOT_PATH . "/app/controllers/comments.php"); 
     usersOnly();
 ?>
 <!DOCTYPE html>
@@ -32,42 +32,87 @@
 
     <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
-        <!-- Admin Page Wrapper -->
-        <div class="admin-wrapper">
+        <div class="page-wrapper">
 
+            <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
 
-            <!-- Admin Content -->
-            <div class="admin-content">
-                <div class="content">
+          <!-- Content -->
+          <div class="content clearfix">
 
-                    <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
+            <!-- Main Content Wrapper -->
+            <div class="main-content-wrapper">
+              <div class="main-content single">
+                <h1 class="post-title"><?php echo $_SESSION['nome_usuario']; ?></h1>
 
-                    <h1> Usuário </h1>
+                <?php foreach ($users as $key => $user): ?>
 
-                    <table>
-                        <thead>
-                            <th>SN</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th colspan="2">Action</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><?php  echo  1; ?></td>
-                                <td><?php echo $_SESSION['nome_usuario']; ?></td>
-                                <td><?php echo $_SESSION['email']; ?></td>
-                                <td><a href="edit.php?edit_id_usuario=<?php echo $_SESSION['id_usuario']; ?>" class="edit">edit</a></td>
-                                <td><a href="index.php?delete_id_usuario=<?php echo $_SESSION['id_usuario']; ?>" class="delete">delete</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                  <?php if ($user['id_usuario'] == $_SESSION['id_usuario']): ?>
+                      <img src="<?php echo BASE_URL . '/assets/images/' . $user['foto_perfil']; ?>" alt="" class="profile-image">
+
+                  <?php endif; ?>
+                    
+                <?php endforeach; ?>
+
+                    <br>
+                    <br>
+
+                      <h1 class="post-title">Informações pessoais:</h1>
+
+                      <div class="post-content">
+                         Nome de usuário: <?php echo $_SESSION['nome_usuario']; ?>
+                      </div>
+                      <br>
+                      <div class="post-content">
+                         Nome completo: <?php echo $_SESSION['nome_completo']; ?>
+                      </div>
+                      <br>
+                      <div class="post-content">
+                         E-mail: <?php echo $_SESSION['email']; ?>
+                      </div>
+                      <br>
+                      <div class="post-content">
+                         <a href="edit.php?edit_id_usuario=<?php echo $_SESSION['id_usuario']; ?>" class="edit">Editar</a>
+                      </div>
+
+                      <div class="post-content">
+                         <a href="index.php?delete_id_usuario=<?php echo $_SESSION['id_usuario']; ?>" class="delete">Deletar</a>
+                      </div>
+
             </div>
-            <!-- // Admin Content -->
+
+            <!-- // Main Content -->
+
+            <!-- Sidebar -->
+            <div class="sidebar single">
+
+              <div class="section popular">
+
+                <h2 class="section-title">Continue navegando!</h2>
+
+                <?php foreach ($posts as $p): ?>
+
+                    <div class="post clearfix">
+                      <img src="<?php echo BASE_URL . '/assets/images/' . $p['imagem_capa']; ?>" alt="">
+                      <a href="single.php?id_publicacao=<?php echo $p['id_publicacao']; ?>" class="title">
+                        <h4><?php echo $p['titulo']; ?></h4>
+                      </a>
+                    </div>
+
+                <?php endforeach; ?>
+
+              </div>
+              
+            </div>
+            <!-- // Sidebar -->
+
+          </div>
+          <!-- // Content -->
 
         </div>
         <!-- // Page Wrapper -->
 
+        <!-- Include Footer -->
+        <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
 
         <!-- JQuery -->

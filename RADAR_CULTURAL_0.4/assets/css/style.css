@@ -60,13 +60,14 @@ a {
   padding: .7rem 1rem;
   display: block;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 15px;
   border: 1px solid #e0e0e0;
   outline: none;
   color: #444;
   line-height: 1.5rem;
   font-size: 1.2em;
   font-family: 'Lora', serif;
+  height: 50px;
 }
 
 .msg {
@@ -712,6 +713,21 @@ header .menu-toggle {
   line-height: 1.5em;
   font-size: 1.03em;
   color: #444;
+}
+
+.page-wrapper .profile-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}
+
+
+.content .main-content.single img {
+
+    margin: auto;
+    display: block;
 }
 
 

@@ -8,6 +8,7 @@ $table = 'tb_usuario';
 
 $admin_users = selectAll($table, ['tipo_usuario' => 1]);
 $read_users = selectAll($table, ['tipo_usuario' => 0]);
+$users = selectAll($table);
 
 
 $errors = array();
@@ -30,6 +31,8 @@ function loginUser($user)
 	$_SESSION['nome_usuario'] = $user['nome_usuario'];
 
 	$_SESSION['tipo_usuario'] = $user['tipo_usuario'];
+
+	$_SESSION['nome_completo'] = $user['nome_completo'];
 
 	$_SESSION['message'] = 'Você está logado';
 
