@@ -27,7 +27,7 @@ adminOnly();
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../assets/css/admin.css">
 
-        <title>Admin Section - Add Page</title>
+        <title> Sessão do Colaborador - Adicionar Página</title>
         <link rel="shortcut icon" type="imagex/png" href="../../assets/images/logo.ico">
     </head>
 
@@ -44,14 +44,14 @@ adminOnly();
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Page</a>
-                    <a href="index.php" class="btn btn-big">Manage Pages</a>
+                    <a href="create.php" class="btn btn-big">Adicionar Páginas</a>
+                    <a href="index.php" class="btn btn-big">Gerenciar Páginas</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Add Page</h2>
+                    <h2 class="page-title">Adicionar Página</h2>
                     <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
                     <form action="create.php" method="post" enctype="multipart/form-data">
@@ -64,7 +64,7 @@ adminOnly();
                             <textarea name="conteudo" id="body"><?php echo $conteudo ?></textarea>
                         </div>
                         <div>
-                            <button type="submit" name="add-page" class="btn btn-big">Add Page</button>
+                            <button type="submit" name="add-page" class="btn btn-big">Adicionar Página</button>
                         </div>
                     </form>
 

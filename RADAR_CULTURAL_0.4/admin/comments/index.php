@@ -26,7 +26,7 @@ adminOnly();
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../assets/css/admin.css">
 
-        <title>Admin Section - Manage Comments</title>
+        <title> Sessão do Administrador - Gerenciar Comentários</title>
         <link rel="shortcut icon" type="imagex/png" href="../../assets/images/logo.ico">
     </head>
 
@@ -46,17 +46,17 @@ adminOnly();
 
                 <div class="content">
 
-                    <h2 class="page-title">Manage Comments</h2>
+                    <h2 class="page-title"> Gerenciar Comentários</h2>
 
                     <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
 
                     <table>
                         <thead>
-                            <th>SN</th>
-                            <th>Conteudo</th>
+                            <th> Índice</th>
+                            <th>Conteúdo</th>
                             <th>Publicação</th>
-                            <th>Author</th>
-                            <th>Action</th>
+                            <th>Autor</th>
+                            <th>Ação</th>
                         </thead>
                         <tbody>
                             <?php foreach ($comments as $key => $comment): ?>
@@ -86,7 +86,7 @@ adminOnly();
                                         
                                     <?php endforeach; ?>
 
-                                    <td><a href="index.php?delete_id=<?php echo $comment['id_comentario']; ?>" class="delete">delete</a></td>
+                                    <td><a href="index.php?delete_id=<?php echo $comment['id_comentario']; ?>" class="delete">Deletar</a></td>
                                     
                                 </tr>
                             <?php endforeach; ?>

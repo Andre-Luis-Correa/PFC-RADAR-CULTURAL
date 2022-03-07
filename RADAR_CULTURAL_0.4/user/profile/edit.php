@@ -23,7 +23,7 @@ usersOnly();
         <!-- Custom Styling -->
         <link rel="stylesheet" href="../../assets/css/style.css">
 
-        <title>User Section - Edit User</title>
+        <title>Sessão do Usuário - Gerenciar Perfil</title>
         <link rel="shortcut icon" type="imagex/png" href="../../assets/images/logo.ico">
     </head>
 
@@ -42,7 +42,7 @@ usersOnly();
 
                 <div class="content">
 
-                    <h2 class="page-title">Edit User</h2>
+                    <h2 class="page-title">Gerenciar Perfil</h2>
 
                     <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
@@ -75,7 +75,7 @@ usersOnly();
                         </div>
                         <br>
                         <div>
-                            <button type="submit" name="update-user-profile" class="btn btn-big">Update User</button>
+                            <button type="submit" name="update-user-profile" class="btn btn-big">Atualizar Cadastro</button>
                         </div>
                     </form>
 

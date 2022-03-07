@@ -43,14 +43,14 @@ adminOnly();
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Post</a>
-                    <a href="index.php" class="btn btn-big">Manage Posts</a>
+                    <a href="create.php" class="btn btn-big">Adiconar Post</a>
+                    <a href="index.php" class="btn btn-big">Gerenciar Post</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Add Post</h2>
+                    <h2 class="page-title">Adicionar Post</h2>
 
                     <?php include(ROOT_PATH . '/app/helpers/formErrors.php'); ?>
 

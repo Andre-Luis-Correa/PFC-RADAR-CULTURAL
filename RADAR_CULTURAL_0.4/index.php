@@ -167,7 +167,7 @@ if (isset($_GET['t_id'])) {
             <p class="preview-text">
               <?php echo html_entity_decode(substr($post['resumo'], 0, 140) . '...'); ?>
             </p>
-            <a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>" class="btn read-more">Read More</a>
+            <a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>" class="btn read-more"> Leia Mais</a>
           </div>
         </div>
 
@@ -179,15 +179,15 @@ if (isset($_GET['t_id'])) {
       <div class="sidebar">
 
         <div class="section search">
-          <h2 class="section-title">Search</h2>
+          <h2 class="section-title"> Procurar </h2>
           <form action="index.php" method="post">
-            <input type="text" name="search-term" class="text-input" placeholder="Search...">
+            <input type="text" name="search-term" class="text-input" placeholder="Digite aqui...">
           </form>
         </div>
 
 
         <div class="section topics">
-          <h2 class="section-title">Topics</h2>
+          <h2 class="section-title"> Categorias  </h2>
           <ul>
 
             <?php foreach ($topics as $key => $topic): ?>

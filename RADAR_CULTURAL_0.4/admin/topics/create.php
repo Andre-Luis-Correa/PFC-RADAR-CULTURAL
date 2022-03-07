@@ -44,14 +44,14 @@ adminOnly();
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Topic</a>
-                    <a href="index.php" class="btn btn-big">Manage Topics</a>
+                    <a href="create.php" class="btn btn-big">Adicionar Categoria</a>
+                    <a href="index.php" class="btn btn-big">Gerenciar Categorias</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Add Topic</h2>
+                    <h2 class="page-title">Adicionar Categoria</h2>
                     <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
                     <form action="create.php" method="post">
@@ -65,7 +65,7 @@ adminOnly();
                         </div>
 
                         <div>
-                            <button type="submit" name="add-topic" class="btn btn-big">Add Topic</button>
+                            <button type="submit" name="add-topic" class="btn btn-big">Adicionar Categoria</button>
                         </div>
                     </form>
 

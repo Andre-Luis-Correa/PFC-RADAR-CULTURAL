@@ -26,7 +26,7 @@ adminOnly();
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../assets/css/admin.css">
 
-        <title>Admin Section - Edit Post</title>
+        <title>Sessão do Colaborador - Editar Post</title>
         <link rel="shortcut icon" type="imagex/png" href="../../assets/images/logo.ico">
     </head>
 
@@ -43,14 +43,14 @@ adminOnly();
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Post</a>
-                    <a href="index.php" class="btn btn-big">Manage Posts</a>
+                    <a href="create.php" class="btn btn-big">Adicionar Post</a>
+                    <a href="index.php" class="btn btn-big">Gerenciar Posts</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Edit Post</h2>
+                    <h2 class="page-title">Editar Post</h2>
 
                     <?php include(ROOT_PATH . '/app/helpers/formErrors.php'); ?>
 
@@ -103,7 +103,7 @@ adminOnly();
 
                         </div>
                         <div>
-                            <button type="submit" name="update-post" class="btn btn-big">Update Post</button>
+                            <button type="submit" name="update-post" class="btn btn-big">Atualizar Post</button>
                         </div>
                     </form>
 

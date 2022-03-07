@@ -75,7 +75,7 @@
 
           <div class="section popular">
 
-            <h2 class="section-title">Popular</h2>
+            <h2 class="section-title">Populares</h2>
 
             <?php foreach ($posts as $p): ?>
 
@@ -91,7 +91,7 @@
           </div>
 
           <div class="section topics">
-            <h2 class="section-title">Topics</h2>
+            <h2 class="section-title">Categorias</h2>
             <ul>
 
               <?php foreach ($topics as $topic): ?>

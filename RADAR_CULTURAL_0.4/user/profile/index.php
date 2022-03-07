@@ -72,12 +72,10 @@
                          E-mail: <?php echo $_SESSION['email']; ?>
                       </div>
                       <br>
+                      <br>
                       <div class="post-content">
-                         <a href="edit.php?edit_id_usuario=<?php echo $_SESSION['id_usuario']; ?>" class="edit">Editar</a>
-                      </div>
-
-                      <div class="post-content">
-                         <a href="index.php?delete_id_usuario=<?php echo $_SESSION['id_usuario']; ?>" class="delete">Deletar</a>
+                         <a href="edit.php?edit_id_usuario=<?php echo $_SESSION['id_usuario']; ?>" class="btn read-more" class="edit">Editar</a>
+                         <a onclick="javascript: if (confirm('Você realmente deseja excluir sua conta?'))location.href='index.php?delete_id_usuario=<?php echo $_SESSION['id_usuario']; ?>'"class="btn read-more"  class="delete">Deletar</a>
                       </div>
 
             </div>
@@ -95,7 +93,7 @@
 
                     <div class="post clearfix">
                       <img src="<?php echo BASE_URL . '/assets/images/' . $p['imagem_capa']; ?>" alt="">
-                      <a href="single.php?id_publicacao=<?php echo $p['id_publicacao']; ?>" class="title">
+                      <a href="<?php echo BASE_URL ?>/single.php?id_publicacao=<?php echo $p['id_publicacao']; ?>" class="title">
                         <h4><?php echo $p['titulo']; ?></h4>
                       </a>
                     </div>

@@ -62,6 +62,22 @@
           <div class="main-content single">
             <h1 class="post-title"><?php echo $post['titulo']; ?></h1>
 
+            <div style="font-size: 25px; color: #838485; text-align: center;" class="post-content">
+               <?php echo $post['resumo']; ?>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="post-content">
+
+              <img src="<?php echo BASE_URL . '/assets/images/' . $post['imagem_capa']; ?>" alt="" class="capa-image">
+            </div>
+
+            <br>
+            <br>
+            <br>
+
             <div class="post-content">
                <?php echo html_entity_decode($post['conteudo']); ?>
             </div>
@@ -77,7 +93,7 @@
                   <form action="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>" method="post" enctype="multipart/form-data">
 
                       <div>
-                          <label>Adicionar comentário:</label>
+                          <label> Deixe sua opinião!</label>
                           <br>
                           <br>
                           <textarea name="conteudo" class="text-input"><?php echo $conteudo_comment ?></textarea> 
@@ -86,7 +102,7 @@
                       <br>
 
                       <div>
-                          <button type="submit" name="add-comment" class="btn btn-big">Add Comment</button>
+                          <button type="submit" name="add-comment" class="btn btn-big">Adicionar Comentário</button>
                       </div>
 
                   </form>
@@ -120,7 +136,7 @@
 
                                   <?php if ($comment['fk_id_usuario'] == $_SESSION['id_usuario']): ?>
 
-                                    <a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>" class="comment-delete">Delete</a>
+                                    <a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>" class="comment-delete">Deletar</a>
 
                                   <?php endif; ?>
 
@@ -168,7 +184,7 @@
           </div>
 
           <div class="section topics">
-            <h2 class="section-title">Topics</h2>
+            <h2 class="section-title"> Categorias</h2>
             <ul>
 
               <?php foreach ($topics as $topic): ?>

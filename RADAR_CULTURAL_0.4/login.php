@@ -37,18 +37,18 @@ guestsOnly();
       <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
       <div>
-        <label>Username</label>
+        <label> Nome de Usuário</label>
         <input type="text" name="nome_usuario" value="<?php echo $nome_usuario; ?>" class="text-input">
       </div>
       <div>
-        <label>Password</label>
+        <label> Senha </label>
         <input type="password" name="senha" value="<?php echo $senha; ?>" class="text-input">
       </div>
       <p><a href="<?php echo BASE_URL . '/forgotPassword.php' ?>">Esqueceu sua senha? </a></p>
       <div>
         <button type="submit" name="login-btn" class="btn btn-big">Login</button>
       </div>
-      <p>Or <a href="<?php echo BASE_URL . '/register.php' ?>">Sign Up</a></p>
+      <p>Ou <a href="<?php echo BASE_URL . '/register.php' ?>">Sign Up</a></p>
     </form>
 
   </div>

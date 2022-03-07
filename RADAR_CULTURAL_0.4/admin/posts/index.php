@@ -43,23 +43,23 @@ adminOnly();
             <!-- Admin Content -->
             <div class="admin-content">
                 <div class="button-group">
-                    <a href="create.php" class="btn btn-big">Add Post</a>
-                    <a href="index.php" class="btn btn-big">Manage Posts</a>
+                    <a href="create.php" class="btn btn-big">Adicionar Post</a>
+                    <a href="index.php" class="btn btn-big">Gerenciar Posts</a>
                 </div>
 
 
                 <div class="content">
 
-                    <h2 class="page-title">Manage Posts</h2>
+                    <h2 class="page-title">Gerenciar Posts</h2>
 
                     <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
 
                     <table>
                         <thead>
-                            <th>SN</th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th colspan="3">Action</th>
+                            <th>índice</th>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th colspan="3">Ação</th>
                         </thead>
                         <tbody>
                             <?php foreach ($posts as $key => $post): ?>

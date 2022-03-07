@@ -62,9 +62,9 @@ guestsOnly();
         <input type="file" accept="image/png,image/jpeg" name="foto_perfil" class="text-input">
       </div>
       <div>
-        <button type="submit" name="register-btn" class="btn btn-big">Register</button>
+        <button type="submit" name="register-btn" class="btn btn-big"> Cadastrar </button>
       </div>
-      <p>Or <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a></p>
+      <p>Ou <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a></p>
     </form>
 
   </div>

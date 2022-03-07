@@ -26,7 +26,7 @@ adminOnly();
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../assets/css/admin.css">
 
-        <title>Admin Section - Dashboard</title>
+        <title>Sessão do Colaborador - Dashboard</title>
         <link rel="shortcut icon" type="imagex/png" href="../assets/images/logo.ico">
     </head>
 
