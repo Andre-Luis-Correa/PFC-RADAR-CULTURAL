@@ -40,7 +40,7 @@ guestsOnly();
         <input type="email" name="email" value="<?php echo $email; ?>" class="text-input">
       </div>
       <div>
-        <button type="submit" name="forgot-password-btn" class="btn btn-big">Login</button>
+        <button type="submit" name="forgot-password-btn" class="btn btn-big">Enviar e-mail</button>
       </div>
     </form>
 

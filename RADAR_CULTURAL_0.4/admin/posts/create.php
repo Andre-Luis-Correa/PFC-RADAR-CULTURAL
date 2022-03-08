@@ -28,6 +28,7 @@ adminOnly();
 
         <title>Admin Section - Add Post</title>
         <link rel="shortcut icon" type="imagex/png" href="../../assets/images/logo.ico">
+
     </head>
 
     <body>
@@ -67,10 +68,12 @@ adminOnly();
                             <label>Resumo</label>
                             <input type="text" name="resumo" value="<?php echo $resumo ?>" class="text-input">
                         </div>
+
                         <div>
                             <label>Conteudo</label>
                             <textarea name="conteudo" id="body"><?php echo $conteudo ?></textarea>
                         </div>
+
                         <div>
                             <label>Categoria</label>
                             <select name="fk_id_categoria" class="text-input">
@@ -113,7 +116,6 @@ adminOnly();
 
         </div>
         <!-- // Page Wrapper -->
-
 
 
         <!-- JQuery -->
