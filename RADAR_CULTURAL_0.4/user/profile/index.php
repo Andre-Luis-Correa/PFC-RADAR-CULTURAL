@@ -75,7 +75,7 @@
                       <br>
                       <div class="post-content">
                          <a href="edit.php?edit_id_usuario=<?php echo $_SESSION['id_usuario']; ?>" class="btn read-more" class="edit">Editar</a>
-                         <a onclick="javascript: if (confirm('Você realmente deseja excluir sua conta?'))location.href='index.php?delete_id_usuario=<?php echo $_SESSION['id_usuario']; ?>'"class="btn read-more"  class="delete">Deletar</a>
+                         <a onclick="javascript: if (confirm('Você realmente deseja excluir sua conta?'))location.href='index.php?delete_id_usuario=<?php echo $_SESSION['id_usuario']; ?>'" class="btn read-more"  class="delete">Deletar</a>
                       </div>
 
             </div>

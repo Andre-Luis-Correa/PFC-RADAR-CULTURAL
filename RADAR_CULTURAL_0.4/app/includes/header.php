@@ -7,7 +7,7 @@
 <header>
 
   <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
-    <h1 class="logo-text"><span>Radar</span>Cultural</h1>
+    <h1 class="logo-text"><img class="capa" src="<?php echo BASE_URL . '/assets/images/logo_definitiva.gif' ?>"><span>Radar Cultural</span></h1>
   </a>
 
   <i class="fa fa-bars menu-toggle"></i>

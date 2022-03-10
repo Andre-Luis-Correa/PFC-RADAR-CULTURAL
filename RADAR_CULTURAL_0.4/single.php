@@ -136,7 +136,7 @@
 
                                   <?php if ($comment['fk_id_usuario'] == $_SESSION['id_usuario']): ?>
 
-                                    <a href="single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>" class="comment-delete">Deletar</a>
+                                    <a onclick="javascript: if (confirm('Você realmente deseja excluir seu comentário?'))location.href='single.php?id_publicacao=<?php echo $post['id_publicacao']; ?>&delete_id=<?php echo $comment['id_comentario']; ?>'" class="comment-delete">Deletar</a>
 
                                   <?php endif; ?>
 
