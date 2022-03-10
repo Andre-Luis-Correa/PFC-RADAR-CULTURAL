@@ -110,6 +110,9 @@ header .logo {
 header .logo-text {
   margin: 9px;
   font-family: 'Candal', serif;
+  display: flex;
+  align-items: center;
+
 }
 
 header .logo-text span {
@@ -744,6 +747,8 @@ header .menu-toggle {
   height: 50px;
 }
 
+    display: flex;
+    align-items: center;
 
 
 
