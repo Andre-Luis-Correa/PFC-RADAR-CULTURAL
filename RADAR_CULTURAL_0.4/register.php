@@ -32,7 +32,7 @@ guestsOnly();
   <div class="auth-content">
 
     <form action="register.php" method="post" enctype="multipart/form-data">
-      <h2 class="form-title">Registre-se</h2>
+      <h2 class="form-title">Cadastre-se</h2>
 
       <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 

@@ -26,7 +26,7 @@ adminOnly();
         <!-- Admin Styling -->
         <link rel="stylesheet" href="../../assets/css/admin.css">
 
-        <title>Admin Section - Manage Posts</title>
+        <title>Sessão do Colaborador - Gerenciar Posts</title>
         <link rel="shortcut icon" type="imagex/png" href="../../assets/images/logo.ico">
     </head>
 
