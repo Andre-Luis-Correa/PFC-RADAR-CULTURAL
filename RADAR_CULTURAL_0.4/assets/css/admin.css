@@ -6,7 +6,7 @@
 }
 
 header {
-	background: #01474a;
+	background: #000000;
 }
 
 .admin-wrapper {
@@ -17,7 +17,7 @@ header {
 .admin-wrapper .left-sidebar {
 	flex: 2;
 	height: 100%;
-	background: #234a57;
+	background: #000000;
 }
 
 .admin-wrapper .left-sidebar ul {
@@ -30,11 +30,12 @@ header {
 .admin-wrapper .left-sidebar ul li a {
 	padding: 18px;
 	display: block;
-	border-bottom: 1px solid #004044;
+	border-bottom: 1px solid #444;
 }
 
 .admin-wrapper .left-sidebar ul li a:hover {
-	background: #004044;
+	background: #d5d6d6;
+	color: black;
 }
 
 .admin-wrapper .admin-content {

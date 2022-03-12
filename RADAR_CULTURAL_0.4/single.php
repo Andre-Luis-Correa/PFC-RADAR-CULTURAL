@@ -40,6 +40,53 @@
 
 </head>
 
+<style type="text/css">
+
+.post-topic {
+  position: static;
+  display: block;
+  width: 25%;
+  height: 30px;
+  color: white;
+  font-size: bold;
+  border-radius: 8px;
+  margin-left: 15px;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 1px;
+}
+
+.post-topic .btn-topic {
+  font-size: bold;
+  color: white;
+}
+
+.post-topic .btn-topic h5 {
+  color: white;
+}
+
+.post-topic .btn-topic:hover {
+  color: white;
+}
+
+.content .main-content .post-topic {
+  position: static;
+  display: block;
+  width: 25%;
+  height: 30px;
+  color: white;
+  font-size: bold;
+  border-radius: 8px;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding-top: 1px;
+}
+
+
+</style>
+
 <body>
     <!-- Facebook Page Plugin SDK -->
     <div id="fb-root"></div>
@@ -60,6 +107,19 @@
         <!-- Main Content Wrapper -->
         <div class="main-content-wrapper">
           <div class="main-content single">
+
+            <?php foreach ($topics as $key => $topic): ?>
+
+              <?php if ($post['fk_id_categoria'] == $topic['id_categoria']): ?>
+
+                <div style="background-color: <?php echo $topic['cor'] ?>" class="post-topic">
+                  <a href="<?php echo BASE_URL . '/index.php?t_id=' . $post['fk_id_categoria'] . '&nome=' . $topic['nome']; ?>" class="btn-topic"><h5><?php echo $topic['nome']; ?></h5></a>
+                </div>
+
+              <?php endif; ?>
+
+            <?php endforeach; ?>
+
             <h1 class="post-title"><?php echo $post['titulo']; ?></h1>
 
             <div style="font-size: 25px; color: #838485; text-align: center;" class="post-content">
@@ -96,7 +156,7 @@
                           <label> Deixe sua opinião!</label>
                           <br>
                           <br>
-                          <textarea name="conteudo" class="text-input"><?php echo $conteudo_comment ?></textarea> 
+                          <textarea style="height: 100px;" name="conteudo" class="text-input"><?php echo $conteudo_comment ?></textarea> 
                       </div>
 
                       <br>

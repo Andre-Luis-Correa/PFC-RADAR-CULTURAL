@@ -38,7 +38,7 @@ a {
 
 .btn {
   padding: .5rem 1rem;
-  background: #006669;
+  background: #E05338;
   color: white;
   border: 1px solid transparent;
   border-radius: .25rem;
@@ -53,7 +53,7 @@ a {
 
 .btn:hover {
   color: white !important;
-  background: #005255;
+  background: #000000;
 }
 
 .text-input {
@@ -74,7 +74,7 @@ a {
   width: 100%;
   margin: 5px auto;
   padding: 8px;
-  border-radius: 5px;
+  border-radius: 20px;
   list-style: none;
 }
 
@@ -117,6 +117,7 @@ header .logo-text {
 
 header .logo-text span {
   color: #ffffff;
+  padding-left: 10px;
 }
 
 header ul {
