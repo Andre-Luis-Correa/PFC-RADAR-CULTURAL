@@ -138,7 +138,7 @@
             <br>
             <br>
 
-            <div class="post-content">
+            <div style="line-height: 150%; text-align: justify;" class="post-content">
                <?php echo html_entity_decode($post['conteudo']); ?>
             </div>
 

@@ -62,7 +62,7 @@
           <div class="main-content single">
             <h1 class="post-title"><?php echo $page['titulo']; ?></h1>
 
-            <div class="post-content">
+            <div style="line-height: 150%; text-align: justify;" class="post-content">
                <?php echo html_entity_decode($page['conteudo']); ?>
             </div>
           </div>
