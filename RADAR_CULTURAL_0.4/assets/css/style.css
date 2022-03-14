@@ -580,6 +580,7 @@ header .menu-toggle {
 @media only screen and (max-width: 1200px) {
   header {
     position: relative;
+    margin-bottom: 50px;
   }
 
   .auth-content {
